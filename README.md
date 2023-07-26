@@ -59,3 +59,28 @@ kubectl cluster-info --context kind-CLUSTER_NAME
 ```bash
 kubectl get nodes
 ```
+
+### aplicar configuração a partir de um arquivo (-f file) yaml
+
+```bash
+kubectl apply -f pod.yaml
+```
+
+### listar pods
+
+```bash
+kubectl get pods
+```
+
+### deletar pod pelo nome
+
+```bash
+kubectl delete pod POD_NAME
+```
+
+### redirecionar porta do pod para acessar
+
+```bash
+kubectl port-forward pod/goserver 8000:8080
+# acessar em http://localhost:8000/hello
+```
