@@ -3,19 +3,16 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"os"
 )
 
-func helloHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello!")
+func main() {
+	http.HandleFunc("/", helloHandler)
+	http.ListenAndServe(":8080", nil)
 }
 
-func main() {
-	// Configura o roteamento do servidor
-	http.HandleFunc("/hello", helloHandler)
-
-	// Inicia o servidor na porta 8080
-	err := http.ListenAndServe(":8080", nil)
-	if err != nil {
-		panic(err)
-	}
+func helloHandler(w http.ResponseWriter, r *http.Request) {
+	name := os.Getenv("NAME")
+	age := os.Getenv("AGE")
+	fmt.Fprintf(w, "Hello, I'm %s. I'm %s.", name, age)
 }
