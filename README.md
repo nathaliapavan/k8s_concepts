@@ -36,6 +36,12 @@ kind create cluster
 kind create cluster --config=kind.yaml --name=CLUSTER_NAME
 ```
 
+### listar configuração dos clusters disponíveis
+
+```bash
+kubectl config get-clusters
+```
+
 ### listar os clusters disponíveis
 
 ```bash
@@ -75,7 +81,7 @@ kubectl get pods
 ### deletar pod pelo nome
 
 ```bash
-kubectl delete pod POD_NAME
+kubectl delete pod POD_NAME --force
 ```
 
 ### redirecionar porta do pod para acessar
@@ -83,4 +89,16 @@ kubectl delete pod POD_NAME
 ```bash
 kubectl port-forward pod/goserver 8000:8080
 # acessar em http://localhost:8000/hello
+```
+
+### listar replicasets
+
+```bash
+kubectl get replicasets
+```
+
+### listar replicasets
+
+```bash
+kubectl delete replicaset REPLICASET_NAME
 ```
