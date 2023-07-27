@@ -141,3 +141,16 @@ kubectl rollout undo deployment DEPLOYMENT_NAME
 ```bash
 kubectl rollout undo deployment DEPLOYMENT_NAME --to-revision=REVISION_NUMBER
 ```
+
+### listar services
+
+```bash
+kubectl get svc
+```
+
+### redirecionar porta do service para acessar
+
+```bash
+kubectl port-forward svc/SERVICE_NAME 8000:8080
+# acessar em http://localhost:8000/hello
+```
