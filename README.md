@@ -154,3 +154,10 @@ kubectl get svc
 kubectl port-forward svc/SERVICE_NAME 8000:8080
 # acessar em http://localhost:8000/hello
 ```
+
+### acessar api kubernetes
+
+```bash
+kubectl proxy --port=8001
+# acessar em http://localhost:8001/api/v1/pods
+```

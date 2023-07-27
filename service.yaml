@@ -8,6 +8,7 @@ spec:
   type: ClusterIP
   ports:
   - name: goserver-service
-    port: 8080
+    port: 8080 # porta do service | porta do computador -> porta do service -> porta do container
+    targetPort: 8080 # porta do container
     protocol: TCP
 
