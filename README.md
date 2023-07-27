@@ -114,3 +114,30 @@ kubectl delete replicaset REPLICASET_NAME
 ```bash
 kubectl get deployments
 ```
+
+### ver detalhes do deployment
+
+```bash
+kubectl describe deployment DEPLOYMENT_NAME
+```
+
+### visualizar o histórico de deployments
+
+```bash
+kubectl rollout history deployment DEPLOYMENT_NAME
+# output
+# REVISION  CHANGE-CAUSE
+# 1         <none>
+```
+
+### voltar para a versão anterior do deployment
+
+```bash
+kubectl rollout undo deployment DEPLOYMENT_NAME
+```
+
+### voltar para a revisão específica do deployment
+
+```bash
+kubectl rollout undo deployment DEPLOYMENT_NAME --to-revision=REVISION_NUMBER
+```
