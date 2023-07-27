@@ -72,6 +72,12 @@ kubectl get nodes
 kubectl apply -f pod.yaml
 ```
 
+### ver detalhes do pod
+
+```bash
+kubectl describe pod POD_NAME
+```
+
 ### listar pods
 
 ```bash
@@ -101,4 +107,10 @@ kubectl get replicasets
 
 ```bash
 kubectl delete replicaset REPLICASET_NAME
+```
+
+### listar deployments
+
+```bash
+kubectl get deployments
 ```
